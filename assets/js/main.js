@@ -5,6 +5,9 @@ const maxRecords = 151
 const limit = 10
 let offset = 0;
 
+let pokemonId = "";
+let pokemonNumber = "";
+
 function convertPokemonToLi(pokemon) {
     return `
         <li class="pokemon ${pokemon.type}">
@@ -49,10 +52,13 @@ loadMoreButton.addEventListener('click', () => {
 function selectPokemon(e) {
     const selectOnePokemon = document.querySelectorAll(".pokemon");
     // console.log(e.srcElement.lastElementChild.alt)
-    console.log(e.srcElement.parentElement.children[0].innerHTML)
+    pokemonId = e.srcElement.parentElement.children[0].innerHTML;
+    pokemonNumber = pokemonId.replace('#', '');
+    console.log(pokemonNumber);
 }
 
 const selectDivPokemons = document.querySelector(".pokemons");
 selectDivPokemons.addEventListener('click', selectPokemon)
 
+pokeApi.getOnePokemon(pokemonNumber);
 
