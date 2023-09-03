@@ -45,3 +45,14 @@ loadMoreButton.addEventListener('click', () => {
         loadPokemonItens(offset, limit)
     }
 })
+
+function selectPokemon(e) {
+    const selectOnePokemon = document.querySelectorAll(".pokemon");
+    // console.log(e.srcElement.lastElementChild.alt)
+    console.log(e.srcElement.parentElement.children[0].innerHTML)
+}
+
+const selectDivPokemons = document.querySelector(".pokemons");
+selectDivPokemons.addEventListener('click', selectPokemon)
+
+
