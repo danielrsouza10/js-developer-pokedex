@@ -1,5 +1,6 @@
 
 const pokeApi = {}
+const singlePokemonArray = {}
 
 function convertPokeApiDetailToPokemon(pokeDetail) {
     const pokemon = new Pokemon()
@@ -23,7 +24,7 @@ pokeApi.getPokemonDetail = (pokemon) => {
         .then(convertPokeApiDetailToPokemon)
 }
 
-pokeApi.getPokemons = (offset = 0, limit = 5) => {
+function getPokemons(offset = 0, limit = 5) {
     const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
 
     return fetch(url)
@@ -40,20 +41,20 @@ function getSinglePokemon(pokemonNumber) {
     console.log(singlePokemonUrl)
     return fetch(singlePokemonUrl)
         .then((response) => response.json())
-        .then((jsonBody) => {
-            const singlePokemon = new SinglePokemon()
-            singlePokemon.name = jsonBody.name;
-            console.log(singlePokemon.name)
-            singlePokemon.id = jsonBody.id;
-            console.log(singlePokemon.id)
-
-
-            // pokemonType = jsonBody.types;
-            // console.log(pokemonType)
-        })
-
-    // .then((pokemon) => pokemon.map(pokeApi.getPokemonDetail))
+        .then((pokemon) => console.log(pokemon))
+    // .then((pokemon) => 
     // .then((detailRequests) => Promise.all(detailRequests))
-    // .then((pokemonDetail) => pokemonDetail)
+    // .then((pokemonsDetails) => pokemonsDetails)
+
+
+    // .then((jsonBody) => {
+    //     const singlePokemon = new SinglePokemon()
+    //     singlePokemon.name = jsonBody.name;
+    //     console.log(singlePokemon.name)
+    //     singlePokemon.id = jsonBody.id;
+    //     console.log(singlePokemon.id)
+    // })
 
 }
+
+
