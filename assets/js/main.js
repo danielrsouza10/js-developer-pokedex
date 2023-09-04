@@ -33,6 +33,7 @@ function loadPokemonItens(offset, limit) {
         pokemonList.innerHTML += newHtml
     })
 }
+
 getPokemons()
 loadPokemonItens(offset, limit)
 
@@ -54,7 +55,8 @@ function selectPokemon(e) {
     const selectOnePokemon = document.querySelectorAll(".pokemon");
     pokemonId = e.srcElement.parentElement.children[0].innerHTML;
     pokemonNumber = pokemonId.replace('#', '');
-    getSinglePokemon(pokemonNumber)
+    const newPokemon = getSinglePokemon(pokemonNumber);
+    console.log(newPokemon);
 }
 
 const selectDivPokemons = document.querySelector(".pokemons");
