@@ -55,6 +55,7 @@ function selectPokemon(e) {
     pokemonId = e.srcElement.parentElement.children[0].innerHTML;
     pokemonNumber = pokemonId.replace('#', '');
     console.log(pokemonNumber);
+    pokeApi.getOnePokemon(pokemonNumber)
 }
 
 const selectDivPokemons = document.querySelector(".pokemons");
