@@ -54,12 +54,10 @@ function selectPokemon(e) {
     // console.log(e.srcElement.lastElementChild.alt)
     pokemonId = e.srcElement.parentElement.children[0].innerHTML;
     pokemonNumber = pokemonId.replace('#', '');
-    console.log(pokemonNumber);
-    pokeApi.getOnePokemon(pokemonNumber)
+    getSinglePokemon(pokemonNumber)
 }
 
 const selectDivPokemons = document.querySelector(".pokemons");
 selectDivPokemons.addEventListener('click', selectPokemon)
 
-pokeApi.getOnePokemon(pokemonNumber);
 

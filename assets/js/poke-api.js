@@ -34,27 +34,26 @@ pokeApi.getPokemons = (offset = 0, limit = 5) => {
         .then((pokemonsDetails) => pokemonsDetails)
 }
 
-let pokemonName = "";
-let idPokemon = "";
-let pokemonType = "";
 
-pokeApi.getOnePokemon = (pokemonNumber = 1) => {
+function getSinglePokemon(pokemonNumber) {
     const singlePokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonNumber}`
     console.log(singlePokemonUrl)
-
     return fetch(singlePokemonUrl)
         .then((response) => response.json())
         .then((jsonBody) => {
-            console.log(jsonBody)
-            pokemonName = jsonBody.name;
-            console.log(pokemonName);
-            idPokemon = jsonBody.id;
-            console.log(idPokemon)
-            pokemonType = jsonBody.types;
-            console.log(pokemonType)
+            const singlePokemon = new SinglePokemon()
+            singlePokemon.name = jsonBody.name;
+            console.log(singlePokemon.name)
+            singlePokemon.id = jsonBody.id;
+            console.log(singlePokemon.id)
+
+
+            // pokemonType = jsonBody.types;
+            // console.log(pokemonType)
         })
-        .then((pokemon) => console.log(pokemon.id))
+
     // .then((pokemon) => pokemon.map(pokeApi.getPokemonDetail))
     // .then((detailRequests) => Promise.all(detailRequests))
     // .then((pokemonDetail) => pokemonDetail)
+
 }
