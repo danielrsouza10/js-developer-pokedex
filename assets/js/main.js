@@ -1,6 +1,6 @@
 const pokemonList = document.getElementById('pokemonList')
 const loadMoreButton = document.getElementById('loadMoreButton')
-const pokemonDetail = document.createElement('div');
+const newPokemonDetail = document.createElement('div');
 
 const maxRecords = 151
 const limit = 10
@@ -17,7 +17,7 @@ function convertPokemonToLi(pokemon) {
 
             <div class="detail">
                 <ol class="types">
-                    ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
+                    
                 </ol>
 
                 <img src="${pokemon.photo}"
@@ -56,7 +56,9 @@ function selectPokemon(e) {
     pokemonId = e.srcElement.parentElement.children[0].innerHTML;
     pokemonNumber = pokemonId.replace('#', '');
     const newPokemon = getSinglePokemon(pokemonNumber);
-    console.log(newPokemon);
+    const newHtml = convertPokemonToLi(newPokemon);
+    newPokemonDetail.innerHTML = newHtml;
+    pokemonList.appendChild(newPokemonDetail);
 }
 
 const selectDivPokemons = document.querySelector(".pokemons");
