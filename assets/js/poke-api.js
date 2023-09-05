@@ -12,6 +12,10 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
     pokemon.types = types
     pokemon.type = type
 
+    const abilities = pokeDetail.abilities.map((abilities) => abilities.ability.name)
+    pokemon.abilities = abilities
+
+
     pokemon.photo = pokeDetail.sprites.other.dream_world.front_default
 
     return pokemon
@@ -43,6 +47,7 @@ function getSinglePokemon(pokemonNumber) {
     return fetch(singlePokemonUrl)
         .then((response) => response.json())
         .then((jsonBody) => jsonBody)
+        .then(convertPokeApiDetailToPokemon)
         .then((pokemon) => pokemon)
 
     // console.log(singlePokemonUrl)
