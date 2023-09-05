@@ -1,6 +1,6 @@
 const pokemonList = document.getElementById('pokemonList')
 const loadMoreButton = document.getElementById('loadMoreButton')
-const newSection = document.querySelector('.model');
+const newSection = document.querySelector('.modal');
 const newPokemonDetail = document.createElement('div');
 
 const maxRecords = 151
@@ -30,11 +30,11 @@ function convertPokemonToLi(pokemon) {
 
 function convertSinglePokemonToModel(pokemon) {
     return `
-    <div class="model-${pokemon.type}">
-        <h1 class="model-${pokemon.type}">${pokemon.name}</h1>
-        <span class="model-number">#${pokemon.number}</span>
-        <div class="model-detail">
-            <ol class="model-types">
+    <div class="modal-${pokemon.type}">
+        <h1 class="modal-${pokemon.type}">${pokemon.name}</h1>
+        <span class="modal-number">#${pokemon.number}</span>
+        <div class="modal-detail">
+            <ol class="modal-types">
                 ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
             </ol>
             <img
@@ -42,9 +42,9 @@ function convertSinglePokemonToModel(pokemon) {
                 alt="${pokemon.name}"/>
         </div>
   </div>
-    <div class="model-content-abilities">
+    <div class="modal-content-abilities">
         <span>Abilities</span>
-        <ol class="model-abilities">
+        <ol class="modal-abilities">
             ${pokemon.abilities.map((abilities) => `<li class="type ${abilities}">${abilities}</li>`).join('')}
         </ol>
     </div>
@@ -76,13 +76,13 @@ loadMoreButton.addEventListener('click', () => {
 })
 
 async function selectPokemon(e) {
-    const selectOnePokemon = document.querySelectorAll(".pokemon");
     pokemonId = e.srcElement.parentElement.children[0].innerHTML;
     pokemonNumber = pokemonId.replace('#', '');
     const newPokemon = await getSinglePokemon(pokemonNumber);
     console.log(newPokemon);
     const newHtml = convertSinglePokemonToModel(newPokemon);
     newPokemonDetail.innerHTML = newHtml;
+    newPokemonDetail.className = "modal-pokemon"
     newSection.appendChild(newPokemonDetail);
 }
 

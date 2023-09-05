@@ -1,0 +1,190 @@
+.modal {
+  background-color: #0000003b;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  /* height: 100vh; */
+  z-index: 2;
+}
+
+.modal-pokemon {
+  width: 100vw;
+  height: 50vh;
+}
+.modal-type {
+  background-color: #77c850;
+  padding: 5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.modal-number {
+  align-self: flex-end;
+}
+
+.modal-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+ol.modal-types {
+  margin: 0;
+  padding: 0.5rem;
+  display: flex;
+  list-style: none;
+}
+
+li.pokemon.modal-type {
+  margin: 0;
+  padding: 1rem;
+}
+.modal-detail > img {
+  width: 50%;
+  align-self: center;
+}
+
+.modal-content-abilities {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+}
+
+.modal-abilities {
+  list-style: none;
+  display: flex;
+}
+
+.modal-abilities > li {
+  margin: 0 0.5rem;
+}
+
+.modal-normal {
+  background-color: #a6a877;
+  padding: 5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-grass {
+  background-color: #77c850;
+  padding: 2rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-fire {
+  background-color: #ee7f30;
+  padding: 5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-water {
+  background-color: #678fee;
+  padding: 5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-electric {
+  background-color: #f7cf2e;
+  padding: 5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-ice {
+  background-color: #98d5d7;
+  padding: 5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-ground {
+  background-color: #dfbf69;
+  padding: 5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-flying {
+  background-color: #a98ff0;
+  padding: 5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-poison {
+  background-color: #a040a0;
+  padding: 5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-fighting {
+  background-color: #bf3029;
+  padding: 5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-psychic {
+  background-color: #f65687;
+  padding: 5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-dark {
+  background-color: #725847;
+  padding: 5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-rock {
+  background-color: #b8a137;
+  padding: 5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-bug {
+  background-color: #a8b720;
+  padding: 5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-ghost {
+  background-color: #6e5896;
+  padding: 5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-steel {
+  background-color: #b9b7cf;
+  padding: 5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-dragon {
+  background-color: #6f38f6;
+  padding: 5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-fairy {
+  background-color: #f9aec7;
+  padding: 5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
